@@ -42,7 +42,7 @@
         }
 
         .widget-container div[data-hfs-widget="true"] {
-            height: 100%;
+            height: 120%; /* Erhöhte Höhe für Mobilansicht */
             overflow-y: auto;
         }
 
@@ -72,6 +72,10 @@
         @media (max-width: 767px) {
             .iframes-container iframe {
                 height: 45%;
+            }
+
+            .widget-container div[data-hfs-widget="true"] {
+                height: 100%; /* Sicherstellen, dass es für Mobilansicht passt */
             }
 
             .link-buttons {
