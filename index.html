@@ -8,15 +8,16 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #121212;
+            color: #ffffff;
         }
 
         .section {
             padding: 10px;
             margin: 10px;
-            background-color: #ffffff;
+            background-color: #1e1e1e;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
         }
 
         iframe {
@@ -26,10 +27,33 @@
             margin-top: 10px;
             border-radius: 8px;
             overflow: hidden;
+            background-color: #1e1e1e;
         }
 
         .widget-container {
             margin-bottom: 20px;
+        }
+
+        .link-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 10px;
+        }
+
+        .link-button {
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #ffffff;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .link-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -60,6 +84,15 @@
     <iframe 
         src="https://fahrplan.oebb.at/bin/stboard.exe/dn?L=vs_scotty.vs_liveticker&evaId=697026&boardType=arr&productsFilter=1011111111011&dirInput=&tickerID=arr&start=yes&eqstops=false&showJourneys=30&additionalTime=0" 
         title="Ankünfte"></iframe>
+
+    <div class="link-buttons">
+        <a href="https://verkehrsauskunft.verbundlinie.at/?S=Hartberg%20(Stmk)%20Busbahnhof" class="link-button">Busbahnbim Routenplaner</a>
+        <a href="https://fahrplan.oebb.at/bin/query.exe/" class="link-button">ÖBB Routenplaner alt</a>
+        <a href="https://fahrplan.oebb.at/webapp/?S=Hartberg (Stmk) Busbahnhof" class="link-button">ÖBB Routenplaner neu</a>
+        <a href="https://verkehrsauskunft.verbundlinie.at/?P=SQ&input=Hartberg (Stmk) Busbahnhof" class="link-button">Busbahnbim Monitor</a>
+        <a href="https://shop.oebbtickets.at/de/ticket" class="link-button">ÖBB Tickets</a>
+        <a href="https://verbundlinie.at/de/fahrplan/rund-um-den-fahrplan/verkehrsmeldungen#accordion4" class="link-button">Busbahnbim Verkehrsmeldungen</a>
+    </div>
 
 </body>
 </html>
