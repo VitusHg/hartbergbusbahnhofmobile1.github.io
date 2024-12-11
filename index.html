@@ -35,28 +35,6 @@
             margin-bottom: 20px;
         }
 
-        .link-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin: 20px 10px;
-        }
-
-        .link-button {
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: #ffffff;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .link-button:hover {
-            background-color: #0056b3;
-        }
-
         .top-links {
             text-align: center;
             margin: 20px 0;
@@ -78,7 +56,7 @@
 
         .scroll-to-top {
             position: fixed;
-            bottom: 20px;
+            bottom: 80px;
             right: 20px;
             background-color: #007bff;
             color: #ffffff;
@@ -91,6 +69,34 @@
         }
 
         .scroll-to-top:hover {
+            background-color: #0056b3;
+        }
+
+        .bottom-console {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: #1e1e1e;
+            padding: 10px 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .bottom-console a {
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #ffffff;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .bottom-console a:hover {
             background-color: #0056b3;
         }
     </style>
@@ -112,7 +118,7 @@
              data-hfs-widget-sq="true" 
              data-hfs-widget-sq-displaymode="results" 
              data-hfs-widget-sq-pcls="7167" 
-             data-hfs-widget-sq-maxjny="20" 
+             data-hfs-widget-sq-maxjny="10" 
              data-hfs-widget-switches-showlogo="false"
              data-hfs-widget-sq-location="A=1@O=Hartberg Busbahnhof (Fritz-Stachel-Platz)@X=15973103@Y=47283458@U=181@L=697026@B=1@p=1733743577@" 
              data-hfs-widget-sq-locationname="Hartberg Busbahnhof" 
@@ -141,6 +147,13 @@
     </div>
 
     <button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">&#8679;</button>
+
+    <div class="bottom-console">
+        <a href="#widget">Widget</a>
+        <a href="#iframes">Iframes</a>
+        <a href="#links">Links</a>
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Nach oben</a>
+    </div>
 
 </body>
 </html>
