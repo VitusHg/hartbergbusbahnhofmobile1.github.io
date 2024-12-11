@@ -55,13 +55,56 @@
         .link-button:hover {
             background-color: #0056b3;
         }
+
+        .top-links {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .top-links a {
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            background-color: #ff5722;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .top-links a:hover {
+            background-color: #e64a19;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .scroll-to-top:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
 
     <h1 style="text-align: center; padding: 10px;">Hartberg Busbahnhof</h1>
 
-    <div class="section widget-container">
+    <div class="top-links">
+        <a href="#widget">Widget</a>
+        <a href="#iframes">Iframes</a>
+        <a href="#links">Links</a>
+    </div>
+
+    <div id="widget" class="section widget-container">
         <script src="https://fahrplan.oebb.at/webapp/staticfiles/hafas-widget-core.1.0.0.js?language=de_DE"></script>
         <div data-hfs-widget="true" 
              data-hfs-widget-cfg-colorscheme="dark" 
@@ -77,15 +120,17 @@
         </div>
     </div>
 
-    <iframe 
-        src="https://fahrplan.oebb.at/bin/stboard.exe/dn?L=vs_scotty.vs_liveticker&evaId=697026&boardType=dep&productsFilter=1011111111011&dirInput=&tickerID=dep&start=yes&eqstops=false&showJourneys=30&additionalTime=0" 
-        title="Abfahrten"></iframe>
+    <div id="iframes">
+        <iframe 
+            src="https://fahrplan.oebb.at/bin/stboard.exe/dn?L=vs_scotty.vs_liveticker&evaId=697026&boardType=dep&productsFilter=1011111111011&dirInput=&tickerID=dep&start=yes&eqstops=false&showJourneys=30&additionalTime=0" 
+            title="Abfahrten"></iframe>
 
-    <iframe 
-        src="https://fahrplan.oebb.at/bin/stboard.exe/dn?L=vs_scotty.vs_liveticker&evaId=697026&boardType=arr&productsFilter=1011111111011&dirInput=&tickerID=arr&start=yes&eqstops=false&showJourneys=30&additionalTime=0" 
-        title="Ankünfte"></iframe>
+        <iframe 
+            src="https://fahrplan.oebb.at/bin/stboard.exe/dn?L=vs_scotty.vs_liveticker&evaId=697026&boardType=arr&productsFilter=1011111111011&dirInput=&tickerID=arr&start=yes&eqstops=false&showJourneys=30&additionalTime=0" 
+            title="Ankünfte"></iframe>
+    </div>
 
-    <div class="link-buttons">
+    <div id="links" class="link-buttons">
         <a href="https://verkehrsauskunft.verbundlinie.at/?S=Hartberg%20(Stmk)%20Busbahnhof" class="link-button">Busbahnbim Routenplaner</a>
         <a href="https://fahrplan.oebb.at/bin/query.exe/" class="link-button">ÖBB Routenplaner alt</a>
         <a href="https://fahrplan.oebb.at/webapp/?S=Hartberg (Stmk) Busbahnhof" class="link-button">ÖBB Routenplaner neu</a>
@@ -93,6 +138,8 @@
         <a href="https://shop.oebbtickets.at/de/ticket" class="link-button">ÖBB Tickets</a>
         <a href="https://verbundlinie.at/de/fahrplan/rund-um-den-fahrplan/verkehrsmeldungen#accordion4" class="link-button">Busbahnbim Verkehrsmeldungen</a>
     </div>
+
+    <button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">&#8679;</button>
 
 </body>
 </html>
