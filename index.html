@@ -35,40 +35,25 @@
             margin-bottom: 20px;
         }
 
-        .top-links {
-            text-align: center;
-            margin: 20px 0;
+        .link-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 10px;
         }
 
-        .top-links a {
+        .link-buttons a {
             text-decoration: none;
             padding: 10px 15px;
-            margin: 0 5px;
             border-radius: 5px;
-            background-color: #ff5722;
-            color: #ffffff;
-            font-weight: bold;
-        }
-
-        .top-links a:hover {
-            background-color: #e64a19;
-        }
-
-        .scroll-to-top {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
             background-color: #007bff;
             color: #ffffff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+            font-weight: bold;
+            text-align: center;
         }
 
-        .scroll-to-top:hover {
+        .link-buttons a:hover {
             background-color: #0056b3;
         }
 
@@ -98,6 +83,10 @@
 
         .bottom-console a:hover {
             background-color: #0056b3;
+        }
+
+        .spacer {
+            height: 60px;
         }
     </style>
 </head>
@@ -140,8 +129,8 @@
         <a href="https://verbundlinie.at/de/fahrplan/rund-um-den-fahrplan/verkehrsmeldungen#accordion4" class="link-button">Busbahnbim Verkehrsmeldungen</a>
     </div>
 
-      <div style="height: 60px;"></div>
-    
+    <div class="spacer"></div>
+
     <div class="bottom-console">
         <a href="#widget">Widget</a>
         <a href="#iframes">Iframes</a>
