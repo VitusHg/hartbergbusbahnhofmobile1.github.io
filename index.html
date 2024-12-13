@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dunkles Design</title>
+    <title>Verkehrsauskunft</title>
     
     <!-- PWA: Manifest -->
     <link rel="manifest" href="/manifest.json">
@@ -25,33 +25,72 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333333;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             overflow: hidden;
         }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+            padding: 15px;
+            border-bottom: 1px solid #d1d1d1;
+        }
+
+        .back-button {
+            text-decoration: none;
+            color: #007aff;
+            font-weight: 500;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+
+        .back-button:active {
+            color: #0056b3;
+        }
+
+        .title {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
         .button-container {
             text-align: center;
+            margin-top: 60px; /* Platz für den Header */
         }
+
         a {
             display: block;
-            margin: 10px 0;
+            margin: 10px auto;
             padding: 15px 20px;
-            background-color: #1E88E5;
+            background: linear-gradient(to bottom, #007aff, #0056b3);
             color: #ffffff;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 18px;
+            width: 80%;
+            max-width: 300px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s;
         }
-        a:hover {
-            background-color: #1565C0;
+
+        a:active {
+            background: #004d99;
         }
+
     </style>
 </head>
 <body>
     <div class="button-container">
-        <a href="./hb.html">Hartberg</a>
+        <a href="https://vitushg.github.io/hartbergbusbahnhofmobile1.github.io/hb.html">Hartberg</a>
         <a href="#">Link 2</a>
         <a href="#">Link 3</a>
     </div>
