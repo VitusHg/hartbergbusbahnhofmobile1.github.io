@@ -32,6 +32,7 @@
             align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid #d1d1d1;
+            position: relative;
         }
 
         .back-button {
@@ -43,6 +44,22 @@
         }
 
         .back-button:active {
+            color: #0056b3;
+        }
+
+        .reload-button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            color: #007aff;
+        }
+
+        .reload-button:active {
             color: #0056b3;
         }
 
@@ -130,6 +147,7 @@
 <header>
     <a href="https://vitushg.github.io/hartbergbusbahnhofmobile1.github.io/index.html" class="back-button">&larr; Zurück</a>
     <div class="title">Hartberg Busbahnhof</div>
+    <button class="reload-button" onclick="location.reload()">&#x21bb;</button>
 </header>
 
 <div id="widget" class="section">
