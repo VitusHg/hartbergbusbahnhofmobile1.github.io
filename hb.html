@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hartberg Busbahnhof</title>
+
+    <!-- PWA: Manifest -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- PWA: Theme Color -->
+    <meta name="theme-color" content="#121212">
+
+    <!-- PWA: Apple iOS Einstellungen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Hartberg Busbahnhof">
+    <link rel="apple-touch-icon" href="/assets/icon-192x192.png">
+
     <style>
         body {
             margin: 0;
@@ -138,5 +151,17 @@
         <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Top</a>
     </div>
 
+    <!-- PWA: Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('Service Worker registriert:', registration);
+                })
+                .catch(error => {
+                    console.error('Service Worker Registrierung fehlgeschlagen:', error);
+                });
+        }
+    </script>
 </body>
 </html>
