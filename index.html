@@ -3,57 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verkehrsauskunft</title>
-    
+    <title>Hartberg Busbahnhof</title>
+
     <!-- PWA: Manifest -->
     <link rel="manifest" href="/manifest.json">
-    
+
     <!-- PWA: Theme Color -->
     <meta name="theme-color" content="#121212">
 
     <!-- PWA: Apple iOS Einstellungen -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Dunkles Design">
+    <meta name="apple-mobile-web-app-title" content="Hartberg Busbahnhof">
     <link rel="apple-touch-icon" href="/assets/icon-192x192.png">
 
     <style>
         body {
             margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            font-family: Arial, sans-serif;
             background-color: #121212;
             color: #ffffff;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
         }
-        .button-container {
+
+        .section {
+            padding: 10px;
+            margin: 10px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin-top: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #1e1e1e;
+            pointer-events: none;
+        }
+
+        .widget-container {
+            margin-bottom: 20px;
+        }
+
+        .link-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 10px;
+        }
+
+        .link-buttons a {
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #ffffff;
+            font-weight: bold;
             text-align: center;
         }
-        a {
-            display: block;
-            margin: 10px 0;
-            padding: 15px 20px;
-            background-color: #1E88E5;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
-            transition: background-color 0.3s;
+
+        .link-buttons a:hover {
+            background-color: #0056b3;
         }
-        a:hover {
-            background-color: #1565C0;
+
+        .bottom-console {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: #1e1e1e;
+            padding: 10px 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+        }
+
+        .bottom-console a {
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #ffffff;
+            font-weight: bold;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .bottom-console a:hover {
+            background-color: #0056b3;
+        }
+
+        .spacer {
+            height: 60px;
         }
     </style>
 </head>
 <body>
-    <div class="button-container">
-        <a href="https://vitushg.github.io/hartbergbusbahnhofmobile1.github.io//hb.html">Hartberg</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+
+    <h1 style="text-align: center; padding: 10px;">Hartberg Busbahnhof</h1>
+
+    <div id="widget" class="section widget-container">
+        <script src="https://fahrplan.oebb.at/webapp/staticfiles/hafas-widget-core.1.0.0.js?language=de_DE"></script>
+        <div data-hfs-widget="true" 
+             data-hfs-widget-cfg-colorscheme="dark" 
+             data-hfs-widget-sq="true" 
+             data-hfs-widget-sq-displaymode="results" 
+             data-hfs-widget-sq-pcls="7167" 
+             data-hfs-widget-sq-maxjny="10" 
+             data-hfs-widget-switches-showlogo="false"
+             data-hfs-widget-sq-location="A=1@O=Hartberg Busbahnhof (Fritz-Stachel-Platz)@X=15973103@Y=47283458@U=181@L=697026@B=1@p=1733743577@" 
+             data-hfs-widget-sq-locationname="Hartberg Busbahnhof" 
+             data-hfs-widget-sq-direction="A=1@O=Gleisdorf Gindlhuber@X=15710088@Y=47114299@U=181@L=617286@B=1@p=1733743577@" 
+             data-hfs-widget-sq-directionname="Graz">
+        </div>
+    </div>
+
+    <div id="iframes">
+        <iframe 
+            src="https://fahrplan.oebb.at/bin/stboard.exe/dn?L=vs_scotty.vs_liveticker&evaId=697026&boardType=dep&productsFilter=1011111111011&dirInput=&tickerID=dep&start=yes&eqstops=false&showJourneys=30&additionalTime=0" 
+            title="Abfahrten"></iframe>
+
+        <iframe 
+            src="https://fahrplan.oebb.at/bin/stboard.exe/dn?L=vs_scotty.vs_liveticker&evaId=697026&boardType=arr&productsFilter=1011111111011&dirInput=&tickerID=arr&start=yes&eqstops=false&showJourneys=30&additionalTime=0" 
+            title="Ankünfte"></iframe>
+    </div>
+
+    <div id="links" class="link-buttons">
+        <a href="https://verkehrsauskunft.verbundlinie.at/?S=Hartberg%20(Stmk)%20Busbahnhof" class="link-button">Busbahnbim Routenplaner</a>
+        <a href="https://fahrplan.oebb.at/bin/query.exe/" class="link-button">ÖBB Routenplaner alt</a>
+        <a href="https://fahrplan.oebb.at/webapp/?S=Hartberg (Stmk) Busbahnhof" class="link-button">ÖBB Routenplaner neu</a>
+        <a href="https://verkehrsauskunft.verbundlinie.at/?P=SQ&input=Hartberg (Stmk) Busbahnhof" class="link-button">Busbahnbim Monitor</a>
+        <a href="https://shop.oebbtickets.at/de/ticket" class="link-button">ÖBB Tickets</a>
+        <a href="https://verbundlinie.at/de/fahrplan/rund-um-den-fahrplan/verkehrsmeldungen#accordion4" class="link-button">Busbahnbim Verkehrsmeldungen</a>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="bottom-console">
+        <a href="#widget">→Graz</a>
+        <a href="#iframes">Monitore</a>
+        <a href="#links">Links</a>
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Top</a>
     </div>
 
     <!-- PWA: Service Worker -->
